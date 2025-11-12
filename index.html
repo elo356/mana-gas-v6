@@ -109,26 +109,30 @@
 </head>
 <body class="bg-white text-zinc-900 antialiased">
   <!-- Header -->
-<header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-zinc-200">
-  <div class="mx-auto w-[92%] max-w-[1150px] flex items-center justify-between py-3">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-zinc-200 shadow-sm">
+  <div class="mx-auto w-[92%] max-w-[1200px] flex flex-wrap items-center justify-between py-4 gap-y-3">
+    
     <!-- Logo -->
-    <a href="#inicio" class="flex items-center gap-2 flex-shrink-0">
-      <img src="images/logo.jpg" alt="Maná Gas" class="h-9 w-auto" />
-  
+    <a href="#inicio" class="flex items-center gap-3 flex-shrink-0">
+      <img src="images/logo.jpg" alt="Maná Gas" class="h-10 w-auto" />
+      <span class="text-lg font-bold tracking-tight text-zinc-800">Maná Gas</span>
     </a>
 
-    <!-- Menú horizontal adaptable -->
-    <nav class="flex overflow-x-auto no-scrollbar whitespace-nowrap gap-1 sm:gap-2 flex-1 justify-end ml-3">
-      <a href="#servicios" class="px-3 py-1.5 rounded-card font-semibold border border-zinc-200 hover:border-brand-600 hover:text-brand-700 transition text-xs sm:text-sm md:text-base flex-shrink-0">Servicios</a>
-      <a href="#quienes" class="px-3 py-1.5 rounded-card font-semibold border border-zinc-200 hover:border-brand-600 hover:text-brand-700 transition text-xs sm:text-sm md:text-base flex-shrink-0">Nosotros</a>
-      <a href="#seguridad" class="px-3 py-1.5 rounded-card font-semibold border border-zinc-200 hover:border-brand-600 hover:text-brand-700 transition text-xs sm:text-sm md:text-base flex-shrink-0">Seguridad</a>
-      <a href="#cotizaciones" class="px-3 py-1.5 rounded-card font-semibold border border-zinc-200 hover:border-brand-600 hover:text-brand-700 transition text-xs sm:text-sm md:text-base flex-shrink-0">Cotización</a>
-      <a href="#contacto" class="px-3 py-1.5 rounded-card font-semibold bg-brand-600 text-white shadow-soft hover:bg-brand-700 transition text-xs sm:text-sm md:text-base flex-shrink-0">
+    <!-- Menú siempre visible -->
+    <nav class="flex flex-wrap justify-end items-center gap-5 text-sm sm:text-base font-medium text-zinc-700 flex-1 text-center">
+      <a href="#servicios" class="hover:text-brand-700 transition-colors">Servicios</a>
+  
+      <a href="#seguridad" class="hover:text-brand-700 transition-colors">Seguridad</a>
+      <a href="#cotizaciones" class="hover:text-brand-700 transition-colors">Cotización</a>
+      <a href="#contacto" class="bg-brand-600 text-white px-5 py-2 hover:bg-brand-700 transition-colors font-semibold">
         <i class="fa-solid fa-phone"></i> Contacto
       </a>
     </nav>
+
   </div>
 </header>
+
+
 
 
   <!-- Hero -->
