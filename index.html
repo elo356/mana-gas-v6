@@ -106,6 +106,20 @@
       .hero{grid-template-columns:1fr}
     }
   </style>
+
+  <style>
+    /* Hero paragraph responsive: desktop absolute at bottom, mobile in-flow under H1 with spacing */
+    .hero-para{ transition:all .22s ease; z-index:30; }
+    /* keep existing utility positioning but offer hook via class */
+    /* placeholder hook if needed */
+    .hero-para.absolute-hook{ display:block; }
+    @media (min-width: 769px){
+      .hero-para{ position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); }
+    }
+    @media (max-width: 768px){
+      .hero-para{ position:relative !important; transform:none !important; left:auto !important; bottom:auto !important; width:auto !important; margin:4rem auto 0; max-width:92%; padding-left:1rem; padding-right:1rem; background:rgba(255,255,255,0.95); box-shadow:0 8px 22px rgba(0,0,0,.08); border-radius:12px; }
+    }
+  </style>
 </head>
 <body class="bg-white text-zinc-900 antialiased">
 
@@ -120,14 +134,12 @@
     </a>
 
     <!-- Menú adaptativo -->
-    <nav class="flex items-center justify-end gap-2 sm:gap-4 md:gap-6 font-medium text-zinc-700 text-[13px] sm:text-sm md:text-base flex-shrink">
+    <nav class="flex items-center justify-end gap-6 sm:gap-4 md:gap-12 font-medium text-zinc-700 text-[13px] sm:text-sm md:text-base flex-shrink">
       <a href="#servicios" class="hover:text-brand-700 transition-colors">Servicios</a>
       <a href="#quienes" class="hover:text-brand-700 transition-colors hidden sm:inline">Nosotros</a>
       <a href="#seguridad" class="hover:text-brand-700 transition-colors">Seguridad</a>
       <a href="#cotizaciones" class="hover:text-brand-700 transition-colors ">Cotización</a>
-        <a href="#contacto" class="bg-brand-600 text-white px-4 py-1.5 hover:bg-brand-700 transition-colors font-semibold flex items-center gap-1 flex-shrink-0">
-        <i class="fa-solid fa-phone"></i> Contacto
-      </a>
+      <a href="#contacto" class="hover:text-brand-700 transition-colors ">Contacto</a>
     </nav>
 
   </div>
@@ -156,52 +168,31 @@
 
 
   <!-- Hero -->
-  <section id="inicio" class="relative min-h-[72vh] text-white overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('images/pic13.jpg')"></div>
-    <div class="absolute inset-0 hero-overlay"></div>
-    <div class="relative mx-auto w-[92%] max-w-[1150px] py-14 md:py-20 grid grid-cols-1 items-center">
-      <div class="space-y-4">
-        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 text-zinc-900 border border-black/5 text-sm font-semibold">
-          Seguridad y servicio profesional
-        </span>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-          Tu proveedor confiable de <span class="text-[#ff7c7c]">gas propano</span> en Puerto Rico.
-        </h1>
-  <p class="bg-white/70 text-zinc-800 py-3 px-6 w-screen relative left-1/2 right-1/2 -translate-x-1/2">
-  Ofrecemos el servicio y la respuesta que buscas. Ya sea que compraste tu primer electrodoméstico de gas,
-  o tu primera casa, te ayudamos con orientación, herramientas y servicios técnicos.
-</p>
-        <div class="flex flex-wrap gap-3">
-          <a class="inline-flex items-center gap-2 px-4 py-2 rounded-card font-semibold bg-brand-600 text-white shadow-soft hover:bg-brand-700 transition" href="tel:+17874691651"><i class="fa-solid fa-phone"></i> Llamar 24/7</a>
-          <a class="inline-flex items-center gap-2 px-4 py-2 rounded-card font-semibold border border-white/20 bg-white/10 text-white hover:bg-white/15 transition" href="https://wa.me/17874691651" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-          <a class="inline-flex items-center gap-2 px-4 py-2 rounded-card font-semibold border border-white/20 bg-white/10 text-white hover:bg-white/15 transition" href="https://maps.google.com/?q=Bo.+Ceiba,+Cidra,+PR+Carr.+782" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Ubicación</a>
-        </div>
-      </div>
-    </div>
-  <div class="absolute left-0 right-0 bottom-0 h-36 md:h-40 overflow-hidden pointer-events-none hero-wave-wrap">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" class="w-[calc(100%+1px)] h-full hero-wave">
-  <defs>
-    <!-- sombra suave y amplia -->
-    <filter id="waveShadow" x="-20%" y="-50%" width="140%" height="200%">
-      <feDropShadow dx="0" dy="-8" stdDeviation="20" flood-color="#000" flood-opacity="0.10"/>
-    </filter>
-  </defs>
+<section id="inicio" class="relative min-h-[72vh] text-white overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('images/pic13.jpg')"></div>
+  <div class="absolute inset-0 hero-overlay"></div>
 
-  <!-- Curva moderna blanca -->
-  <path 
-    d="M0,240 
-       C400,280 900,200 1440,240 
-       L1440,320 
-       L0,320 Z"
-    fill="#ffffff"
-    stroke="rgba(0,0,0,0.03)"
-    stroke-width="1"
-    filter="url(#waveShadow)">
-  </path>
-</svg>
+  <div class="relative mx-auto w-[92%] max-w-[1150px] py-14 md:py-20 grid grid-cols-1 items-center">
+    <div class="space-y-4">
+      <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 text-zinc-900 border border-black/5 text-sm font-semibold">
+        Seguridad y servicio profesional
+      </span>
 
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+        Tu proveedor confiable de <span class="text-[#ff7c7c]">gas propano</span> en Puerto Rico.
+      </h1>
     </div>
-  </section>
+  </div>
+
+  <!-- 👇 Lo movemos fuera del bloque principal y lo posicionamos al fondo -->
+  <p class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white/70 text-zinc-800 py-3 px-6 w-[90%] max-w-[900px] text-center rounded-md shadow-sm hero-para">
+    Ofrecemos el servicio y la respuesta que buscas. Ya sea que compraste tu primer electrodoméstico de gas,
+    o tu primera casa, te ayudamos con orientación, herramientas y servicios técnicos.
+  </p>
+
+  <div class="absolute left-0 right-0 bottom-0 h-36 md:h-40 overflow-hidden pointer-events-none hero-wave-wrap"></div>
+</section>
+
 
   <!-- Servicios -->
 <section id="servicios" class="py-16">
